@@ -1,4 +1,4 @@
-## Wildcart Certificate Renewal Script for Let's Encrypt Certbot and Porkbun API
+## Wildcard Certificate Renewal Script for Let's Encrypt Certbot and Porkbun API
 
 This repository contains a Bash script that automates the process of obtaining a wildcard certificate using Let's Encrypt and managing DNS records through the Porkbun API. The script uses Certbot for certificate generation, manual authentication, and cleanup.
 
