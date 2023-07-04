@@ -30,7 +30,7 @@ Before using this script, make sure you have the following:
    chmod +x renew.sh auth.sh cleanup.sh
    ```
 
-4. Generate Porkbun API key and Secret key by following the [Porkbun API documentation](https://porkbun.com/account/api). Make sure to enable API access for your domain in the domain settings.
+4. Generate Porkbun API key and Secret key by following the [Porkbun API documentation](https://porkbun.com/account/api). Make sure to enable API access for your domain in the domain settings ([Domain Management](https://porkbun.com/account/domainsSpeedy) → Details → API access checkbox).
 
 5. Run the `renew.sh` script to generate the wildcard certificate:
 
