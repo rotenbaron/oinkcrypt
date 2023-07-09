@@ -18,7 +18,7 @@ certbot certonly \
   --manual --manual-public-ip-logging-ok --agree-tos \
   --server https://acme-v02.api.letsencrypt.org/directory \
   --manual-auth-hook "$(dirname "$0")/auth.sh" \
-  --manual-cleanup-hook "$(dirname "$0")/cleanup.sh $DOMAIN $APIKEY $CERTBOT_AUTH_OUTPUT" | tee -a certbot.log
+  --manual-cleanup-hook "$(dirname "$0")/cleanup.sh $DOMAIN $APIKEY $CERTBOT_AUTH_OUTPUT" | tee -a $(dirname "$0")/certbot.log
 
 # Display the result
 echo "Certificate obtained and DNS records deleted."
