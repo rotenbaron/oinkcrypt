@@ -22,3 +22,8 @@ certbot certonly \
 
 # Display the result
 echo "Certificate obtained and DNS records deleted."
+
+# Reload Nginx
+# uncomment if needed
+#systemctl reload nginx
+#echo "Nginx reloaded."
