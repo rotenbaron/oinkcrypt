@@ -1,8 +1,5 @@
+# renew.sh
 #!/bin/bash
-
-# Author: Rotenbaron
-# Website: https://redthread.studio
-# Repository: https://github.com/rotenbaron/oinkcrypt
 
 # Set the domain, API key, and secret API key as command-line arguments
 export DOMAIN=$1
@@ -15,10 +12,15 @@ certbot certonly \
   -d *.$DOMAIN \
   -d $DOMAIN \
   --preferred-challenges dns \
-  --manual --manual-public-ip-logging-ok --agree-tos \
+  --email rotenbaron@gmail.com \
+  --manual \
+  --agree-tos \
   --server https://acme-v02.api.letsencrypt.org/directory \
   --manual-auth-hook "$(dirname "$0")/auth.sh" \
-  --manual-cleanup-hook "$(dirname "$0")/cleanup.sh $DOMAIN $APIKEY $CERTBOT_AUTH_OUTPUT" | tee -a certbot.log
+  --manual-cleanup-hook "$(dirname "$0")/cleanup.sh $DOMAIN $APIKEY" | tee -a $DOMAIN.log
+
+# Clean up the temporary file
+rm -f certbot_auth_output_$DOMAIN.txt
 
 # Display the result
 echo "Certificate obtained and DNS records deleted."
